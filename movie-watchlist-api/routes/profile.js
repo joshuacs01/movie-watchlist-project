@@ -7,7 +7,7 @@ const router = express.Router();
 
 
 //user profile
-router.get("/profile", authenticateToken, async (req, res) => {
+router.get("/", authenticateToken, async (req, res) => {
 
     try {
         const user = await prisma.user.findUnique({
