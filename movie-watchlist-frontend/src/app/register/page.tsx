@@ -74,14 +74,14 @@ export default function AuthPage() {
         <div className="container mx-auto py-4 z-30">
             <header className="flex items-center justify-between mb-12">
                 <Link href="/">
-                    <h1 className="text-2xl font-bold">Movie List</h1>
+                    <h1 className="text-2xl font-bold font-sans">Movie List</h1>
                 </Link>
                 <div className="flex gap-4 ">
-                    <Link className=" my-auto " href="/login">
+                    <Link className=" my-auto font-sans" href="/login">
                         <p>Login</p>
                     </Link>
                     <Link href="/register">
-                        <p className="py-3 px-3 bg-white rounded-2xl text-black">Sign Up</p>
+                        <p className="py-3 px-3 bg-white rounded-2xl text-black font-sans">Sign Up</p>
                     </Link>
                 </div>
             </header>
@@ -107,17 +107,19 @@ export default function AuthPage() {
                     background: "radial-gradient(ellipse at 20% 50%, rgba(232,184,75,0.05) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.05) 0%, transparent 60%)",
                 }} />
 
-                <div className="card fade-up  p-[40px] bg-white rounded-lg border-gray-600 border-2">
+                <div className="card fade-up  p-[40px] bg-white rounded-lg border-gray-600 border-2 w-[65vh]">
                     {/* Logo */}
                     <div style={{ textAlign: "center", marginBottom: 32 }}>
                         <br />
-                        <h1 className=" text-[150%] text-black text-2xl font-semibold leading-none tracking-tight">Create an Account</h1>
+                        <h1 className=" text-black text-3xl font-semibold leading-none tracking-tight font-sans">Create an Account</h1>
                     </div>
 
                     <form onSubmit={handleSubmit} className="flex flex-col g-14 space-y-5">
-                        <div className="flex space-x-2 ">
-                            <div>
-                                <label className="text-black mb-1 block ">First Name</label>
+
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="flex space-x-2 flex-col">
+                                <label className="text-black mb-1 block font-sans ">First Name</label>
                                 <input
                                     className="input outline-1 outline-black text-black rounded-xs px-1 py-1"
                                     type="first"
@@ -127,9 +129,8 @@ export default function AuthPage() {
                                     required
                                 />
                             </div>
-
-                            <div>
-                                <label className="text-black mb-1 block ">Last Name</label>
+                            <div className="flex space-x-2 flex-col">
+                                <label className="text-black mb-1 block font-sans">Last Name</label>
                                 <input
                                     className="input outline-1 outline-black text-black rounded-xs px-1 py-1"
                                     type="last"
@@ -138,11 +139,12 @@ export default function AuthPage() {
                                     onChange={(e) => setForm({ ...form, last: e.target.value })}
                                     required
                                 />
+
                             </div>
                         </div>
 
                         <div>
-                            <label className="text-black mb-1 block ">E-mail</label>
+                            <label className="text-black mb-1 block font-sans">E-mail</label>
                             <input
                                 className="input outline-1 outline-black text-black w-full rounded-xs px-1 py-1"
                                 type="email"
@@ -154,7 +156,7 @@ export default function AuthPage() {
                         </div>
 
                         <div>
-                            <label className="text-black mb-1 block ">Username</label>
+                            <label className="text-black mb-1 block font-sans">Username</label>
                             <input
                                 className="input outline-1  outline-black text-black  w-full rounded-xs px-1 py-1"
                                 type="text"
@@ -176,7 +178,7 @@ export default function AuthPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2 flex flex-col">
-                                <label className="text-black mb-1 block" htmlFor="password">Password</label>
+                                <label className="text-black mb-1 block" htmlFor="password font-sans">Password</label>
                                 <input
                                     className="input outline-1  outline-black text-black rounded-xs px-1 py-1"
                                     id="password"
@@ -191,8 +193,8 @@ export default function AuthPage() {
                                 />
                                 <div className="space-y-2">
                                     <div className="flex justify-between text-xs">
-                                        <span className="text-black">Strength:</span>
-                                        <span className="text-black">
+                                        <span className="text-black font-sans">Strength:</span>
+                                        <span className="text-black font-sans ">
                                             {passwordStrength === 0 && "Very Weak"}
                                             {passwordStrength === 25 && "Weak"}
                                             {passwordStrength === 50 && "Medium"}
@@ -201,7 +203,7 @@ export default function AuthPage() {
                                         </span>
                                     </div>
                                     <progress value={passwordStrength} className="h-2 w-full" />
-                                    <div className="text-xs text-gray-500">
+                                    <div className="text-xs text-gray-500 font-sans">
                                         Password must contain:
                                         <ul className="list-disc pl-5 mt-1">
                                             <li className={form.password.length >= 8 ? "text-green-500" : ""}>At least 8 characters</li>
@@ -218,7 +220,7 @@ export default function AuthPage() {
                             </div>
 
                             <div className="space-y-2 flex flex-col">
-                                <label className="text-black mb-1 block" htmlFor="confirmPassword">Confirm Password</label>
+                                <label className="text-black mb-1 block" htmlFor="confirmPassword font-sans">Confirm Password</label>
                                 <input
                                     className="input outline-1  outline-black text-black rounded-xs px-1 py-1"
                                     id="confirmPassword"
@@ -236,14 +238,14 @@ export default function AuthPage() {
 
 
                         <button
-                            className="p-3 bg-black rounded-lg text-white"
+                            className="p-3 bg-black rounded-lg text-white font-sans"
                             type="submit"
                             disabled={loading}
                             style={{ marginTop: 4, padding: "12px", fontSize: 15, fontWeight: 500 }}
                         >Submit
                         </button>
 
-                        <p className="text-sm text-gray-500 mx-auto">
+                        <p className="text-sm text-gray-500 mx-auto font-sans">
                             Already have an account?{" "}
                             <Link href="/login" className="text-blue-600 hover:underline">
                                 Login
