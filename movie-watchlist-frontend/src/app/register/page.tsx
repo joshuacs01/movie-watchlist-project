@@ -107,7 +107,7 @@ export default function AuthPage() {
                     background: "radial-gradient(ellipse at 20% 50%, rgba(232,184,75,0.05) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.05) 0%, transparent 60%)",
                 }} />
 
-                <div className="card fade-up  p-[40px] bg-white rounded-lg border-gray-600 border-2 w-[65vh]">
+                <div className="card fade-up  p-[40px] bg-white rounded-lg border-gray-600 border-2 w-[35vw]">
                     {/* Logo */}
                     <div style={{ textAlign: "center", marginBottom: 32 }}>
                         <br />
